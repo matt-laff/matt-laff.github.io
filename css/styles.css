@@ -138,8 +138,8 @@ body {
 }
 
 button {
-    background-color: var(--bg);
-    color: var(--highlight);
+    /* background-color: var(--bg); */
+    /* color: var(--highlight); */
     border: none;
     padding: 10px 20px;
     cursor: pointer;
