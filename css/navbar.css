@@ -1,66 +1,132 @@
+:root {
+    --navlinks-height: 80px;
+    --drawer-width: 50vw;
+}
+/* https://www.w3schools.com/howto/howto_js_navbar_sticky.asp */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    /* backdrop-filter: blur(4px); */
+}
 
+.test {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100vw;
+    background: transparent;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
     position: relative;
-    z-index: 2000;
+    z-index: 1;
 }
 
-nav ul{
-    list-style-type: none;
+.navbar ul {
+    display: flex;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav ul li{
-    display: inline-block;
-}
 
-nav ul li a {
-    display: block;
-    padding: 1em;
-    text-decoration: none;
-    color: var(--primary);
-}
-
-button {
-    transition: all 0.5s;
-}
+/* Left Nav */
 
 .left-nav{
     display: flex;
     align-items: center;
-    gap: 0.75em;
-    padding: 0 1em;
+    gap: 0.05px;
+    position: relative;
+    z-index: 1;
 }
+
+/* .navbar .left-nav li{
+    padding: 0.05rem;
+} */
+
+.navbar .left-nav a {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navbar button {
+    background: transparent;
+}
+
+.navbar .icon {
+    color: var(--text);
+    width: 20px;
+    height: 20px;
+}
+
+.navbar .logo {
+    color: var(--text);
+    width: 30px;
+    height: 30px;
+}
+
+.navbar button:hover .icon,
+.navbar a:hover .logo {
+    color: var(--highlight);
+}
+
+body #dark-icon {
+    display: flex;
+}
+
+body #light-icon {
+    display: none;
+}
+
+body.dark-mode #light-icon {
+    display: flex;
+}
+
+body.dark-mode #dark-icon {
+    display: none;
+}
+
+
+/* Right Nav */
 
 .right-nav {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    height: 100%;
     position: relative;
-    z-index: 2100;
+    z-index: 1;
 }
 
-.icon {
-    color: var(--primary);
-    width: 24px;
-    height: 24px;
+.right-nav li {
+    padding: 0.25rem;
 }
 
-.icon:hover {
+.right-nav li a{
+    display: block;
+    padding: 1rem;  /* 1*the font size of its parent element */
+    text-decoration: none;
+    color: var(--text);
+}
+
+.right-nav li a:hover{
     color: var(--highlight);
-}   
+}
 
+/* Right Nav - Menu Toggle */
 
 .menu-toggle {
+    display: none;
     background: transparent;
     cursor: pointer;
     border: none;
-    display: none;
 }
 
 
@@ -69,20 +135,21 @@ button {
     height: 24px; 
 }
 
-.menu-toggle:hover {
-    color: var(--highlight);
-}   
+.drawer{
+    display: none;
+}
 
+.blur {
+    display: none;
+    position: fixed;
+    inset: 0; /* cover entire viewport top, right, bottom, left = 0 offset (entire viewport)*/
+    z-index: 1;
+    pointer-events: none;
+}
 
 /* 
-nav ul li a:hover{
-    
-    color: var(--highlight);
-} */
-/* 
-.main{
-    margin-top: 100px;
-    padding: 0 0.5em;
+button {
+    transition: all 0.5s;
 } */
 
 
@@ -96,90 +163,74 @@ nav ul li a:hover{
 
 @media (min-width: 320px) and (max-width: 767px){
 
-    .menu-toggle {
-        display: block;
-        background: transparent;
-        color: var(--highlight);
-        position: fixed;
-        top: 20px;
-        right: 16px;
+    /* Default Element Styling for Mobile */
 
-        z-index: 3000;
+    .right-nav {
+        position: relative;
+        z-index: 4;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        color: var(--text);
     }
 
     .menu-toggle:hover {
-        color: var(--text);
-    }
-    
-    .nav-links {
-        position: fixed;
-        width: 50%;
-        height: 100%;
-        top: 80px;
-        right: -100%;
-        text-align: center;
-        display: block;
-        list-style: none;
-        z-index: 2500;
-    }
-
-    .nav-links.active {
-        right: 0;
-        transition: all 0.4s ease;
-    }
-
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links a {
-        display: block;
-        width: 100%;
-        padding: 1.5em;
-        text-decoration: none;
-        text-align: center;
         color: var(--highlight);
-        /* background: var(--secondary); */
-        background: transparent;
     }
-    .nav-links a:hover {
-        color: var(--primary);
-    } 
 
-    .navbar::after {
-        content: "";
+    .right-nav .nav-links {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        align-items: center;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        pointer-events: none;
+        z-index: 4;
+    }
+
+    .drawer {
+        display: block;
         position: fixed;
         top: 0;
         right: 0;
-        width: 40%;
-        height: 100%;
-        background: var(--secondary);
-        opacity: 0.8;
-        z-index: 2400;
-        transition: all 0.5s ease;
+        width: var(--drawer-width);
+        height: 100vh;
+        z-index: 3;
+        background-color: var(--secondary);
         transform: translateX(100%);
- 
-    }
-    .navbar.menu-open::after {
-       transform: translateX(0);
+        transition: transform 0.4s ease-in-out;
     }
 
-    .right-nav,
-    .nav-links{
-        position: relative;
-        z-index: 2600;
-    }   
+
+    /* Open Menu Event Styling */
 
 
-    .blur.active { 
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1900;
-        width: 100%;
-        height: 100% ;
+    body.menu-open {
+        overflow: hidden;
+    }
+
+
+    body.menu-open .nav-links{
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+
+    body.menu-open .drawer{
+        transform: translateX(0);
+    }
+
+    body.menu-open .blur{ 
+        display: block;
+        pointer-events: auto;
         backdrop-filter: blur(4px);
     }
 
