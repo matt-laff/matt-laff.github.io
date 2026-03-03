@@ -3,127 +3,38 @@
 
 }
 
+
 :root {
-  --green: #006400;
-
-  --dark-purple: #3a3153;
-  --bright-purple: #5f43b2;
-  --black: #000000;
-  --white: #fefdfd;
-  --gray: #b1aebb;
-
-  --color-cream:           #F3E5AB;
-  --color-blush:           #D1A4B1;
-  --color-lilac:           #BE81BD;
-  --color-amethyst:        #8E65B0;
-  --color-imperial:        #5E4B98;
-  --color-twilight:        #3E3B7A;
-  --color-abyss:           #2A2A5C;
-  --color-nocturne:        #161C4D;
-
-
-  --bg: var(--color-nocturne);
-  --primary: var(--color-cream);
-  --secondary: var(--color-blush);
-  --text: var(--color-lilac);
-  --highlight: var(--color-imperial);
-  
+  --bg: #ffffff;
+  --secondary: #000000;
+  --highlight: #ffffff;
+  --header-text: #fff333;
+  --text: #1E1B4B;
 }
 
-:root[data-theme="t1"] {
-  --color-violet-soft:      #9B7EDE;
-  --color-blue-light:       #BCD2EE;
-  --color-aqua:             #91F3DC;
-  --color-background-plum:  #1B1030;
+:root[data-theme="dark-mode"] {
+  --bg: #0B0722;
+  --secondary: #342579;
 
-  --bg: var(--color-background-plum); /* background */
-  --primary: var(--color-aqua); /* primary buttons, active nav links, main icon */
-  --secondary: var(--color-violet-soft); /* secondary buttons, inactive nav links */
-  --text: var(--color-blue-light); /* main text */
-  --highlight: var(--color-violet-soft); /* highlights, hover states, accents */
+  --highlight: #14E3AC;
 
-  --color-violet-soft:      #9B7EDE;
-  --color-blue-light:       #BCD2EE;
-  --color-aqua:             #91F3DC;
-  --color-background-plum:  #1B1030;
+  --header-text: #D0CBFF;
+  --text: #8FA3E6;
 
-  --bg: var(--color-background-plum);
-  --primary: var(--color-aqua);
-  --secondary: var(--color-violet-soft);
-  --text: var(--color-blue-light);
-  --highlight: #C084FC;
-
+  --border-subtle: #3E2A7F;
 }
 
+:root[data-theme="light-mode"] {
+  --bg: #DCE3FF;    
+  --secondary: #CDD6FF;
 
-:root[data-theme="t2"]{
+  --highlight: #008CFF;    /* electric blue */
 
-  /* Core colors */
-  --color-violet-deep:     #4C1F76;
-  --color-violet-soft:     #9B7EDE;
-  --color-blue-light:      #BCD2EE;
-  --color-aqua:            #91F3DC;
+  --header-text: #0B0722;
+  --text: #0B0722;
 
-  /* Slightly tinted background (not white) */
-  --bg: #EDE9FE;               /* lavender wash */
-
-  /* Role mapping */
-  --primary: var(--color-violet-deep);   /* strong purple buttons */
-  --secondary: var(--color-blue-light);  /* softer UI accents */
-  --text: #2A1247;                        /* deep plum text */
-  --highlight: var(--color-aqua);         /* bright interactive pop */
-
+  --border-subtle: #B2C1FF;
 }
-
-:root[data-theme="t3"] {
-  --bg: #120A1F;         /* black-purple */
-  --primary: #C084FC;    /* light grape */
-  --secondary: #34D399;  /* mint */
-  --text: #F9FAFB;       /* white */
-  --highlight: #60A5FA;  /* soft blue */
-}
-
-:root[data-theme="t4"] {
-  --bg: #0B1020;         /* midnight */
-  --primary: #A855F7;    /* orchid purple */
-  --secondary: #22D3EE;  /* cyan */
-  --text: #E5E7EB;       /* near-white */
-  --highlight: #F97316;  /* orange */
-}
-
-:root[data-theme="t5"] {
-  --bg: #F3E8FF;        /* lavender wash */
-  --primary: #7C3AED;   /* amethyst */
-  --secondary: #A855F7; /* brighter purple */
-  --text: #2A1247;      /* deep plum */
-  --highlight: #C084FC; /* soft lilac */
-}
-
-:root[data-theme="t6"] {
-  --bg: #1A0F2E;        /* deep violet */
-  --primary: #C084FC;   /* lilac */
-  --secondary: #9333EA; /* strong purple */
-  --text: #F5F3FF;      /* lavender white */
-  --highlight: #E9D5FF; /* very light purple */
-
-}
-
-:root[data-theme="t7"] {
-  --bg: #EDE9FE;        /* periwinkle tint */
-  --primary: #6D28D9;   /* royal purple */
-  --secondary: #8B5CF6; /* medium violet */
-  --text: #1E1B4B;      /* indigo-plum */
-  --highlight: #A78BFA; /* pastel violet */
-}
-
-:root[data-theme="t8"]{
-  --bg: #140A28;        /* black grape */
-  --primary: #A78BFA;   /* soft violet */
-  --secondary: #7C3AED; /* strong purple */
-  --text: #F3F0FF;      /* soft white */
-  --highlight: #C4B5FD; /* light lavender */
-}
-
 
 html {
   overflow-x: visible;
@@ -131,7 +42,7 @@ html {
 
 body {
     overflow-x: hidden;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 1.2em;
     color: var(--text);
     background-color: var(--bg);
@@ -148,18 +59,18 @@ button {
 
 h1 {
     text-align: center;
-    color: var(--secondary);
+    color: var(--header-text);
 }
 
 .section-title {
     font-size: 2em;
-    color: var(--secondary);
+    color: var(--header-text);
     margin-bottom: 0.5em;
 }
 
 .section-number {
     font-size: 1.5em;
-    color: var(--primary);
+    color: var(--highlight);
     margin-bottom: 0.5em;
 }
 
@@ -184,7 +95,7 @@ h1 {
 }
 
 ::selection {
-    background-color: var(--primary);
+    background-color: var(--highlight);
     color: var(--bg);
 }
 
@@ -199,7 +110,7 @@ h1 {
     font-size: 1.25em;
     text-align: center;
     margin-top: 0.5em;
-    background-color: var(--primary);
+    background-color: var(--highlight);
     color: var(--bg);
 
 }

@@ -1,14 +1,35 @@
 
-const themes = ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9'];
-let theme_idx = 0;
 const menuButton = document.getElementById('menu-toggle');
 const blurDiv = document.querySelector('.blur')
 
+
+
+function setTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+}
+
+function loadTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    let attr = "light-mode"
+    if (savedTheme) {
+        attr = savedTheme
+        if (savedTheme == 'dark-mode') {
+            document.body.classList.toggle('dark-mode')
+        }
+    }
+    document.documentElement.setAttribute("data-theme", attr);
+}
+
 document.getElementById('theme-toggle').addEventListener('click', function() {
-    theme_idx = (theme_idx + 1) % themes.length;
-    document.documentElement.dataset.theme = themes[theme_idx];
-    document.body.classList.toggle('dark-mode')
-    // button.textContent = "Theme: " + themes[theme_idx];
+    const dm = document.body.classList.toggle('dark-mode')
+    if (dm) {
+        setTheme("dark-mode")
+    }
+    else {
+        setTheme("light-mode")
+    }
+
 
 }); 
 
@@ -23,3 +44,5 @@ blurDiv.addEventListener('click', () => {
 }
 )
 
+
+loadTheme();

@@ -63,13 +63,13 @@ header {
 }
 
 .navbar .icon {
-    color: var(--primary);
+    color: var(--text);
     width: 20px;
     height: 20px;
 }
 
 .navbar .logo {
-    color: var(--primary);
+    color: var(--text);
     width: 30px;
     height: 30px;
 }
@@ -113,7 +113,7 @@ body.dark-mode #dark-icon {
     display: block;
     padding: 1rem;  /* 1*the font size of its parent element */
     text-decoration: none;
-    color: var(--primary);
+    color: var(--text);
 }
 
 .right-nav li a:hover{
@@ -172,7 +172,7 @@ button {
 
     .menu-toggle {
         display: inline-flex;
-        color: var(--primary);
+        color: var(--text);
     }
 
     .menu-toggle:hover {
