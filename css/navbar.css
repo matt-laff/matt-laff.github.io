@@ -10,7 +10,7 @@ header {
     /* backdrop-filter: blur(4px); */
 }
 
-.test {
+.header-blur{
     position: fixed;
     top: 0;
     left: 0;
@@ -232,6 +232,10 @@ button {
         display: block;
         pointer-events: auto;
         backdrop-filter: blur(4px);
+    }
+
+    body.menu-open .header-blur{
+        display: none;
     }
 
 

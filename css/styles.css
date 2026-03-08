@@ -10,6 +10,7 @@
   --highlight: #ffffff;
   --header-text: #fff333;
   --text: #1E1B4B;
+
 }
 
 :root[data-theme="dark-mode"] {
@@ -22,6 +23,8 @@
   --text: #8FA3E6;
 
   --border-subtle: #3E2A7F;
+
+  --db-border: 2px solid var(--highlight);
 }
 
 :root[data-theme="light-mode"] {
@@ -88,10 +91,23 @@ h1 {
 }
 
 .section-header {
+    border: #14E3AC 2px solid;
     display: flex;
     align-items: center;
     gap: 0.5em;
     margin-bottom: 1em;
+}
+
+section {
+    display: block;
+    border: #14E3AC 2px solid;
+    inset: 3em;
+    padding: 4em;
+    align-items: center;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    margin-left: 20em;
+    margin-right: 20em;
 }
 
 ::selection {
@@ -99,18 +115,4 @@ h1 {
     color: var(--bg);
 }
 
-.home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-.selection-test {
-    font-size: 1.25em;
-    text-align: center;
-    margin-top: 0.5em;
-    background-color: var(--highlight);
-    color: var(--bg);
-
-}
