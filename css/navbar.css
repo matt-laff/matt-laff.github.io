@@ -185,6 +185,7 @@ button {
         right: 0;
         height: 100vh;
         display: flex;
+        
         flex-direction: column;
         width: 50vw;
         align-items: center;

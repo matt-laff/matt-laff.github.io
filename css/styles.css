@@ -41,6 +41,7 @@
 
 html {
   overflow-x: visible;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -100,14 +101,13 @@ h1 {
 
 section {
     display: block;
-    border: #14E3AC 2px solid;
-    inset: 3em;
-    padding: 4em;
-    align-items: center;
-    margin-top: 4em;
-    margin-bottom: 4em;
-    margin-left: 20em;
-    margin-right: 20em;
+    border: var(--highlight) 2px solid;
+
+    padding: clamp(1.5rem, 4vw, 4rem);
+    margin: 4rem auto;
+    width: min(100% - 2em, 900px);
+
+
 }
 
 ::selection {
