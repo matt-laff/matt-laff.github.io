@@ -7,8 +7,10 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="css/hero.css">
+        <link rel="stylesheet" href="css/accordion.css">
     </head>
     <script defer src="js/navbar.js"></script>
+    <script defer src="js/accordion.js"></script>
     <body>
         <header>
             <nav class="navbar" id="navbar">
@@ -101,6 +103,12 @@
                     <li>Go</li>
                     <li>C++</li>
                     <li>Node.js</li>
+                    <li>Bash</li>
+                    <li>GitHub</li>
+                    <li>Linux</li>
+                    <li>Google Cloud</li>
+                    <li>Azure</li>
+                    <li>Terraform</li>
 
                 </ul>
             </div>
@@ -110,14 +118,33 @@
                 <p class="section-number">02.</p>
                 <h2 class="section-title">Work Experience</h2>
             </div>
-            <div class="work-list">
-                <div class="work-item">
-                    <h3>Company A</h3>
-                    <p>Software Engineer (2020 - Present)</p>
+            <div class="work-content">
+                <button class="accordion">
+                    <span class="job-title">Data Support Engineer</span>
+                    <span class="job-date">Oct. 2025 - Present</span>
+                </button>
+                <div class="panel">
+                    <p> - Investigated and resolved client data issues for the primary communication platform 
+                        by analyzing source data files, SQL queries and Python processing pipelines to determine root causes.
+                    </p>
+                    <p> - Diagnose and troubleshoot integrations with Student Information Systems, validating data ingestion pipelines.</p>
+                    <p> - Developed automation scripts to streamline internal support workflows, including tooling for plugin reconstruction or basic data analysis</p>
                 </div>
-                <div class="work-item">
-                    <h3>Company B</h3>
-                    <p>Web Developer (2018 - 2020)</p>
+                <button class="accordion">
+                    <span class="job-title">Technical Course Support Specialist</span>
+                    <span class="job-date">Sep. 2024 - June 2025</span>
+                </button>
+                <div class="panel">
+                    <p> - Supervised and mentored a team of support staff to ensure smooth lab sessions for 100+ students.</p>
+                    <p> - Delivered presentations and live technical walktrhougsh on topics including Object-Oriented Design, C++, Python and Java programming concepts and algorithms.</p>
+                </div>
+                <button class="accordion">
+                    <span class="job-title">Computer Science Tutor</span>
+                    <span class="job-date">Sep. 2023 - Sep. 2024</span>
+                </button>
+                <div class="panel">
+                    <p> - Provided one-on-one and small group support to students in Computer Science labs, with a focus on C++, Python and Java programming concepts.</p>
+                    <p> - Assisted in Homework Recitation sessions, assisting students in debugging and core concepts for CS 162 (Intro to Computer Science), CS 163 (Data Structures and Algorithms), CS 302 (Programming Methodologies and Software Implementation)</p>
                 </div>
             </div>
         </section>
