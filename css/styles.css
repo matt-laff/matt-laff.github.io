@@ -142,10 +142,10 @@ section {
 
 .section-content ul {
     align-self: center;
-    gap: 1em;
-    column-count: 2;
+    column-count: 4;
     margin-top: 0.5rem;
     margin-bottom: 0;
+    margin-right: 2.5rem;
 }
 
 
@@ -160,3 +160,16 @@ section {
 }
 
 
+.work-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (min-width: 320px) and (max-width: 767px){
+
+    .section-content ul {
+        column-count: 2;
+    }
+
+}
