@@ -105,7 +105,7 @@ section {
 
     padding: clamp(1.5rem, 4vw, 4rem);
     margin: 4rem auto;
-    width: min(100% - 2em, 800px);
+    width: min(100% - 2em, 950px);
 
     border: 1px solid var(--highlight);
     border-radius: 14px;
@@ -165,6 +165,13 @@ section {
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
 
 @media (min-width: 320px) and (max-width: 767px){
 
